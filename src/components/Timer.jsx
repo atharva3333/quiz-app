@@ -3,7 +3,7 @@ import { useNavigate} from 'react-router-dom';
 import { QuestionContext } from '../context/QuestionContext'; // Assuming you have a TestContext
 
 const Timer = () => {
-  const [timeInSeconds, setTimeInSeconds] = useState(1 * 60);
+  const [timeInSeconds, setTimeInSeconds] = useState(30 * 60);
   const history = useNavigate();
   const { setTimerFinish } = useContext(QuestionContext);
 

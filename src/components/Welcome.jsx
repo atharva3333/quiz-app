@@ -1,13 +1,37 @@
-import React,{useContext} from 'react'
+import React,{useContext, useEffect} from 'react'
 import TestSvg from '../assets/test.svg'
 import { QuestionContext } from "../context/QuestionContext";
 import { NavLink } from 'react-router-dom';
 const Welcome = () => {
 
-    const { email, setEmail } = useContext(QuestionContext);
+    const { email, setEmail,setTimerFinish, question, setQuestion } = useContext(QuestionContext);
 
+    
 
-      
+  useEffect(() => {
+    // Fetch questions and set them using setQuestionsData
+    async function fetchQuestionsData() {
+      try {
+        const response = await fetch("https://opentdb.com/api.php?amount=15");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json(); // Parse JSON response
+        setQuestion(data.results); // Assuming data.results contains the questions
+        
+      } catch (error) {
+        console.error("Error fetching questions:", error);
+      }
+    }
+
+    fetchQuestionsData();
+  }, [setQuestion]);
+
+  console.log(question);
+    
+    const handleSubmit = () =>{
+      setTimerFinish(true);
+    }
 
   return (
     <div className='flex gap-20 mt-20 justify-center items-end'>
@@ -29,6 +53,7 @@ const Welcome = () => {
            </input>
            <NavLink to={'/test'}>
            <button 
+           onClick={handleSubmit}
            className='bg-emerald-600 px-8 py-4 rounded-sm text-white font-semibold mt-5 text-xl'
            
            >Start Test</button>

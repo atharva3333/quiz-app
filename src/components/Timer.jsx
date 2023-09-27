@@ -31,7 +31,7 @@ const Timer = () => {
   };
 
   return (
-    <div className='flex sm:justify-center justify-start'>
+    <div className='flex justify-center'>
       <p className='font-extrabold p-3 mt-5 rounded-sm text-xl'>{formatTime(timeInSeconds)}</p>
       {/* Add any other UI elements or components here */}
     </div>

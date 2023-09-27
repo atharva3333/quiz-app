@@ -48,7 +48,7 @@ const Report = () => {
               <div className="flex items-center">
                 <div className="w-full md:w-[900px]">
                   <p className='font-bold text-lg'>Question {index + 1}: {decodeEntities(currentQuestion.question)}</p>
-                  <div className='flex gap-20 justify-normal mt-5'>
+                  <div className='flex sm:flex-row flex-col sm:gap-20 gap-5 justify-normal mt-5'>
                     <p className='bg-white shadow-md px-4 py-2 rounded-full'>
                       <span className='font-medium'>Selected Option:</span> {userAnswers[index] ? decodeEntities(userAnswers[index]) : 'Not answered'}
                     </p>

@@ -34,7 +34,7 @@ const Welcome = () => {
     }
 
   return (
-    <div className='flex gap-20 mt-20 justify-center items-end'>
+    <div className='flex sm:flex-row flex-col-reverse gap-20 mt-20 justify-center items-end mx-2'>
 
     <div>
         <img src={TestSvg} alt='test'/>

@@ -77,6 +77,10 @@ const Test = () => {
     }
   };
 
+  const handleCloseSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   useEffect(() => {
     // Track viewed questions
     if (!viewedQuestions.includes(currentQuestionIndex)) {
@@ -120,7 +124,9 @@ const Test = () => {
     <div className='px-2'>
       {email && <p className='absolute right-5 top-5 font-bold'>{email}</p>}
 
-      <button onClick={handleToggleSidebar}>Toggle Sidebar</button>
+      <button className='absolute left-5 top-5' onClick={handleToggleSidebar}>
+        <img width="50" height="50" src="https://img.icons8.com/ios/50/xbox-menu.png" alt="xbox-menu" />
+      </button>
 
       {/* Sidebar component with isOpen prop */}
       <Sidebar
@@ -130,6 +136,7 @@ const Test = () => {
         isOpen={isSidebarOpen} // Pass the sidebar state
         attemptedQuestions={attemptedQuestions} // Pass attempted questions
         viewedQuestions={viewedQuestions} // Pass viewed questions
+        onClose={handleCloseSidebar}
       />
 
       <Timer />
@@ -163,7 +170,7 @@ const Test = () => {
         <button className='bg-blue-800 px-8 py-2 text-white rounded-md font-medium' onClick={handlePreviousQuestion}>Previous</button>
         <button className='bg-blue-800 px-8 py-2 text-white rounded-md font-medium' onClick={handleNextQuestion}>Next</button>
       </div>
-      <div className='flex justify-center mt-5'>
+      <div className='flex justify-center my-5 '>
         <NavLink to={'/report'}> <button className=' bg-emerald-500 px-8 py-2 text-white rounded-md font-medium' onClick={handleSubmit}>Submit</button></NavLink>
       </div>
 

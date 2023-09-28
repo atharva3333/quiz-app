@@ -31,7 +31,7 @@ const Report = () => {
     <div className='w-full md:w-[900px] mx-auto my-10'>
       <h2 className='text-center font-bold text-3xl uppercase my-5'>Report</h2>
       <div className="text-center mb-5">
-        <p>{correctAnswers}/{question.length} correct answers</p>
+        <p className='font-bold text-xl text-indigo-300'>{correctAnswers}/{question.length} correct answers</p>
       </div>
       <ul className='flex flex-col gap-10'>
         {question.map((currentQuestion, index) => (

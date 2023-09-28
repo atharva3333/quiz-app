@@ -9,7 +9,7 @@ const Test = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [options, setOptions] = useState([]);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [attemptedQuestions, setAttemptedQuestions] = useState([]); // Track attempted questions
   const [viewedQuestions, setViewedQuestions] = useState([]);
   // Check if question is null before accessing its properties

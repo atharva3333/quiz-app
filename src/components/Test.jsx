@@ -153,7 +153,7 @@ const Test = () => {
                   className={`hover:bg-gray-50 p-2 rounded-md cursor-pointer flex items-center`}
                   onClick={() => handleOptionSelect(option)}
                 >
-                  {option} {userAnswers[currentQuestionIndex] === option && <span className="text-green-500 ml-2 text-xl">&#10003;</span>}
+                  {decodeEntities(option)} {userAnswers[currentQuestionIndex] === option && <span className="text-green-500 ml-2 text-xl">&#10003;</span>}
                 </li>
               ))}
             </ul>
